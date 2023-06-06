@@ -6,7 +6,7 @@
 #    By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/06 11:31:33 by dpalmer           #+#    #+#              #
-#    Updated: 2023/06/06 11:41:17 by dpalmer          ###   ########.fr        #
+#    Updated: 2023/06/06 11:41:59 by dpalmer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,26 +60,3 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		all clean fclean re
-
-# SRCS = ./megaphone.cpp
-
-# CC = clang++
-# NAME = megaphone
-
-# CFLANG = -Wall -Wextra -Werror -std=c++98
-# OBJS = $(SRCS:.cpp=.o)
-
-# all: $(NAME)
-
-# $(NAME): $(OBJS)
-# 	$(CC) $(CFLAG) -o $(NAME) $(OBJS)
-
-# clean:
-# 	rm -f $(OBJS)
-
-# fclean: clean
-# 	rm -f $(NAME)
-
-# re: fclean all
-
-# .PHONY: all clean fclean re
