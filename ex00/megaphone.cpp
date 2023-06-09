@@ -19,13 +19,10 @@ int main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
 	{
-		for (int index = 1; index < argc; index++)
-		{
-			std::string str = argv[index];
-			std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-			std::cout << str;
-		}
+		for (int index = 1; argv[index]; index++)
+			for (int letter = 0; argv[index][letter]; letter++)
+				std::cout << (char) toupper(argv[index][letter]);
 	}
 	std::cout << std::endl;
-	return (0);
+	return (EXIT_SUCCESS);
 }

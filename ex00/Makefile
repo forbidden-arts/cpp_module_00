@@ -16,7 +16,7 @@ NAME		=	megaphone
 # OBJ_DIR		=	obj/
 # INCLUDE	 	=	-I include
 
-CC			=	clang++
+CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98 #-fsanitize=thread
 
 # Colors
