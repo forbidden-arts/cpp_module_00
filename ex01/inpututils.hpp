@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   inpututils.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 10:30:33 by dpalmer           #+#    #+#             */
-/*   Updated: 2023/06/09 11:29:23 by dpalmer          ###   ########.fr       */
+/*   Created: 2023/06/09 08:37:53 by dpalmer           #+#    #+#             */
+/*   Updated: 2023/06/09 12:29:19 by dpalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef INPUTUTILS_HPP
+#define INPUTUTILS_HPP
 
-#include "contact.hpp"
+#include <iostream>
 
-#define MAX_CONTACTS 8
+void		readInput(std::string &buffer);
+std::string	trunc(std::string str, int width);
+void		preview(
+				std::string index,
+				std::string first,
+				std::string last,
+				std::string nick,
+				int width);
+int			garbageAtoi(std::string str);
 
-class PhoneBook
-{
-	public:
-		PhoneBook();
-		void	selectOption(void);
-
-	private:
-		int		index;
-		void	newContact(void);
-		void	findContact(void);
-		void	showContact(int index);
-		void	addContact(void);
-		Contact	contacts[MAX_CONTACTS];
-};
 #endif

@@ -6,7 +6,7 @@
 /*   By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 10:37:22 by dpalmer           #+#    #+#             */
-/*   Updated: 2023/06/08 13:55:22 by dpalmer          ###   ########.fr       */
+/*   Updated: 2023/06/09 11:41:23 by dpalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 void	phonebook_intro (void)
 {
 	std::cout
-	<< "******************************************" << std::endl
+	<< "\033[33m******************************************" << std::endl
 	<< "*                                        *" << std::endl
 	<< "* Welcome to the super-awesome PhoneBook *" << std::endl
 	<< "*      What do you want to do next?      *" << std::endl
 	<< "*                                        *" << std::endl
-	<< "******************************************" << std::endl;
+	<< "******************************************\e[0m" << std::endl;
 }
 
 int	main(void)
@@ -29,6 +29,6 @@ int	main(void)
 	PhoneBook	phonebook;
 
 	phonebook_intro();
-	phonebook.Select();
+	phonebook.selectOption();
 	return (0);
 }

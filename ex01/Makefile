@@ -6,7 +6,7 @@
 #    By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/06 11:31:33 by dpalmer           #+#    #+#              #
-#    Updated: 2023/06/08 13:57:25 by dpalmer          ###   ########.fr        #
+#    Updated: 2023/06/09 10:59:33 by dpalmer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME		=	phonebook
 # OBJ_DIR		=	obj/
 # INCLUDE	 	=	-I include
 
-CC			=	clang++
+CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98 #-fsanitize=thread
 
 # Colors
@@ -32,6 +32,7 @@ CYAN = \033[0;96m
 
 SRC_FILES	=	main		\
 				contact		\
+				inpututils	\
 				phonebook
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))

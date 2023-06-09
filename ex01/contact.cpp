@@ -6,28 +6,52 @@
 /*   By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 12:13:09 by dpalmer           #+#    #+#             */
-/*   Updated: 2023/06/08 13:21:41 by dpalmer          ###   ########.fr       */
+/*   Updated: 2023/06/09 12:34:48 by dpalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+#include "inpututils.hpp"
 #include "contact.hpp"
 
-Contact::Contact(void){};
-Contact::~Contact(void){};
-
-void	Contact::set_values(
-	std::string first_name,
-	std::string last_name,
-	std::string nick_name,
-	std::string phone_number,
-	std::string darkest_secret)
+Contact	Contact::createNewContact(void)
 {
-	this->first_name = first_name;
-	this->last_name = last_name;
-	this->nick_name = nick_name;
-	this->phone_number = phone_number;
-	this->darkest_secret = darkest_secret;
+	Contact newContract;
+
+	std::cout << "Enter First Name: " << std::flush;
+	readInput(newContract.first_name);
+	std::cout << "Enter Last Name: ";
+	readInput(newContract.last_name);
+	std::cout << "Enter Nickname: ";
+	readInput(newContract.nick_name);
+	std::cout << "Enter Phone Number: ";
+	readInput(newContract.phone_number);
+	std::cout << "Reveal Darkest Secret: ";
+	readInput(newContract.darkest_secret);
+	return (newContract);
+}
+
+bool	Contact::check_valid(void) const
+{
+	return (!(
+		first_name.empty() ||
+		last_name.empty() ||
+		nick_name.empty() ||
+		phone_number.empty() ||
+		darkest_secret.empty()
+		));
+}
+
+void	Contact::showContact(void) const
+{
+	if (first_name.empty())
+		return;
+	std::cout << "\nFirst Name:\t" << first_name << std::endl
+			<< "Last Name:\t" << last_name << std::endl
+			<< "Nickname:\t" << nick_name << std::endl
+			<< "Phone Number:\t" << phone_number << std::endl
+			<< "Darkest Secret:\t" << darkest_secret << std::endl;
 }
 
 std::string	Contact::getFirstName(void) const
